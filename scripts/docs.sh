@@ -10,6 +10,16 @@ ALECTRYON_FLAGS="-R src POCS --output-directory doc"
 
 mkdir -p doc
 
+for file in src/*.v; do
+    if [ ! -f "$file" ]; then
+        continue
+    fi
+    echo $file
+    filename=$(basename $file)
+    ${ALECTRYON} ${ALECTRYON_FLAGS} --frontend coqdoc $file --output "doc/${filename}.html" &
+done
+wait
+
 for dir in src/*; do
     dirname=$(basename $dir)
     for file in $dir/*.v; do

@@ -3,8 +3,7 @@
     This file provides common infrastructure for the lab assignments for
     6.826 (Principles of Computer Systems).  You can explore this common
     infrastructure by browsing the coqdoc documentation for the libraries
-    imported here.  Click on the module name after the [Require Export]
-    statement to navigate to the documentation for that module.
+    imported here.
 
     All of the code you will be writing for 6.826 lab assignments will
     import all of this common infrastructure using [Require Import POCS],
