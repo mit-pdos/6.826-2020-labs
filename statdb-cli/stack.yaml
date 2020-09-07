@@ -1,0 +1,7 @@
+# For advanced use and comprehensive documentation of the format, please see:
+# http://docs.haskellstack.org/en/stable/yaml_configuration/
+
+# latest release as of 2020-08-07
+# uses GHC 8.8.3
+resolver: lts-16.8
+local-bin-path: ../bin
