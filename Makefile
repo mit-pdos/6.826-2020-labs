@@ -6,12 +6,11 @@ BINS		:= statdb-cli remap-nbd replicate-nbd
 COQRFLAGS	:= -R src POCS
 COQARGS		:= $(COQRFLAGS) -w -undo-batch-mode
 
-ALECTRYON := alectryon.py
-
-COQDOCFLAGS:= \
-  --toc --toc-depth 2 --html \
-  --index indexpage --no-lib-name --parse-comments \
-  --with-header assets/header.html --with-footer assets/footer.html
+ALECTRYON_OPTIONS := \
+	alectryon.py \
+	$(HOME)/code/sw/alectryon/alectryon.py \
+	$(HOME)/refsrc/alectryon/alectryon.py
+ALECTRYON := $(shell for f in $(ALECTRYON_OPTIONS); do if test -e $$f; then echo $$f; break; fi; done)
 
 default: $(ALL_VOFILES)
 
