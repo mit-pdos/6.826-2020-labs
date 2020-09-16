@@ -1,0 +1,29 @@
+name: remap-nbd
+version: 0.1.0.0
+license: MIT
+author: "6.826 staff"
+copyright: "2019 6.826 staff"
+
+description: Please see the labs README
+
+dependencies:
+  - base >= 4.7 && < 5
+  - ghc-prim
+  - mtl
+  - bytestring
+  - directory
+  - unix
+  - unix-bytestring
+  - cereal
+  - cereal-conduit
+  - conduit
+  - conduit-extra
+  - conduit-combinators
+  - optparse-applicative
+
+executables:
+  remap-nbd:
+    main: Main.hs
+    source-dirs:
+      - lib
+      - extract
