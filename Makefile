@@ -62,6 +62,3 @@ bin/%: %/extract
 
 lab%-handin.tar.gz:
 	tar -czf $@ $$(find . -name "*.v" -or -name "Makefile")
-
-# Backwards compat for lab 0; we should change lab0.html for next year.
-prepare-submit: lab0-handin.tar.gz
