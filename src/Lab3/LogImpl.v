@@ -75,8 +75,6 @@ Hint Resolve addr_to_block_ok : core.
 Notation "d [ a |-> b ]" := (diskUpd d a b) (at level 8, left associativity).
 Notation "d [ a |=> bs ]" := (diskUpds d a bs) (at level 8, left associativity).
 
-Opaque diskGet.
-
 
 (** In this lab, you will likely be doing reasoning about
     the contents of various disk blocks.  The following
@@ -178,6 +176,13 @@ Module Log (d : OneDiskAPI) <: LogAPI.
   Proof.
   Admitted.
 
+
+  (* Marking [diskGet] opaque helps prevent Coq from unfolding its
+     definition when you call the [simpl] tactic.  You can still
+     reason about [diskGet] using various lemmas we provided for you.
+     If you want, feel free to remove this statement, though it is
+     likely to make for a more confusing and messy proof. *)
+  Opaque diskGet.
 
   Axiom init_ok : init_abstraction init recover abstr inited_any.
   Axiom get_ok : proc_spec get_spec get recover abstr.
